@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">UBER PRICE BY KMCKLEIN</string>
+    <string name="costoHora">Costo Hora=15</string>
+    <string name="costokilometro">Costo Kilometro=40</string>
+    <string name="horas">Cantidad Horas Recorridas</string>
+    <string name="kilometro">Cantidad Kilometros recorridos</string>
+    <string name="titulo">PRECIO VIAJE UBER</string>
+    <string name="CalcularPasaje">Calcular pasaje</string>
+    <string name="DiseñadoporKMCKLEIN"> Diseñado por KMCKLEIN</string>
+
+
+</resources>

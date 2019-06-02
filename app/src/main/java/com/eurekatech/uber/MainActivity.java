@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.icu.math.BigDecimal;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,9 +29,20 @@ public class MainActivity extends AppCompatActivity {
         pasaje= findViewById(R.id.txtPasaje);
         pasaje.setText("");
 
+        eventoTeclado teclado=new eventoTeclado();
+        kilo.setOnEditorActionListener(teclado);
 
     }
+    class eventoTeclado implements  TextView.OnEditorActionListener{
 
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (actionId== EditorInfo.IME_ACTION_DONE){
+                calcular(null);
+            }
+            return false;
+        }
+    }
     public void calcular(View view){
         Double ch,ck,total;
 
@@ -48,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
             ck= Double.valueOf(kilo.getText().toString());
 
             total=15*ch+40*ck;
-            pasaje.setText("Su pasaje es " + total.toString() + " pesos");
+            String ptotal="Su pasaje es " + total.toString()  + " pesos";
+            pasaje.setText(ptotal);
             pasaje.setBackgroundColor(getResources().getColor(android.R.color.black));
             pasaje.setTextColor(getResources().getColor(android.R.color.white));
 
